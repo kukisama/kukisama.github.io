@@ -1,5 +1,5 @@
 # Basic
-title: 胖哥标题
+title: 胖哥的自留地
 subtitle: 一个不爱吹牛逼的打工仔
 welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">下载这个主题</a>
 description: 自豪的使用Github Page作为博客
@@ -37,7 +37,7 @@ comment:
     
 # Social
 social:
-    weibo: pangzi
+    weibo: kukisama
     github: kukisama
     twitter: pangzi
     #gplus: xxxxx
