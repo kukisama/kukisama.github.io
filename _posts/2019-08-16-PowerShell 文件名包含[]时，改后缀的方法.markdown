@@ -106,3 +106,16 @@ Get-ChildItem *.mp41 | ForEach-Object{ Rename-Item $_ $(($_.name -replace '^file
 
 # 剩下的问题
 其实到这里，还有一个坑，如果有一天，需要对包含[]的文件，替换文件名，应该如何做呢？
+
+# 完美解决
+感谢==唐老师在微信上指点==，在
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/rename-item?view=powershell-6
+找到了这么一个参数。可以对路径名称不进行转义。经过测试，完美解决
+```
+-LiteralPath
+Specifies a path to one or more locations. The value of LiteralPath is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+。
+PS E:\BaiduNetdiskDownload> $a =Get-ChildItem *.mp41 -Recurse
+PS E:\BaiduNetdiskDownload> Rename-Item -LiteralPath $a.FullName -NewName "[SUBPIG][FAKE AFFAIR EP05].mp4"
+
+```
