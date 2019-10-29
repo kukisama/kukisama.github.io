@@ -10,7 +10,7 @@ url: "http://www.ny9s.com"
 permalink: /:year/:month/:title/
 
 # Format
-highlighter: rouge
+highlighter: pygments
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 cover_color: red
@@ -25,6 +25,14 @@ nav:
     - {title: 项目, description: 项目描述, url: 'http://www.ny9s.com'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - fenced_code_blocks
+    - no_intra_emphasis
+    - strikethrough
+    - autolink
+    - tables
 # Pagination
 plugins: [jekyll-paginate]
 paginate: 10
