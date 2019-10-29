@@ -13,7 +13,7 @@ ProfileEditor(profile: $draftProfile)
     }
 ```
 
-```
+```powershell
 $gcfile = Get-Content "C:\x\azaa.ps1"
 $xyz = ($gcfile -match "^\$.*=?" | ForEach-Object { $_.split(' |%|+|=')[0] } | Select-Object -Unique )
 $xyz | Sort-Object -Property length -Descending
