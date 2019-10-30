@@ -2,7 +2,7 @@
 ### 在Windows中，测试一个目标地址的端口是否通断，常用办法是使用telnet。
 ### 但是这工具的问题在于不随系统安装，且对端目标端口失败的时候，超时时间很长
 
-```
+```powershell
 #找到一个大佬分享的方法
 
 $address = "192.168.1.10"
@@ -32,7 +32,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient?view=ne
 在Stackoverflow找到最合适的一个例子
 [这里](https://stackoverflow.com/questions/11837541/check-if-a-port-is-open)
 
-```
+``c#
 #原C#逻辑
 
 bool IsPortOpen(string host, int port, TimeSpan timeout)
@@ -47,7 +47,7 @@ bool IsPortOpen(string host, int port, TimeSpan timeout)
 ```
 
 ### 翻译一下，变成我们PowerShell的写法，问题解决，还可以设置超时时间，速度非常快
-```
+```powershell
 
 $tcp = new-object Net.Sockets.TcpClient
 $result = $tcp.BeginConnect("baidu.com", "80", $null,$null)
