@@ -25,7 +25,7 @@ nav:
     - {title: 项目, description: 项目描述, url: 'http://www.ny9s.com'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown  # [ maruku | rdiscount | kramdown | redcarpet ]
 kramdown:
   input:         GFM
