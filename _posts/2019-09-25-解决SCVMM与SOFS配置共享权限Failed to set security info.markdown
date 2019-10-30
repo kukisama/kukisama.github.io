@@ -24,7 +24,7 @@ Unknown error (0x8001)
 
 # 处理流程
 处理过程使用如下命令
-```
+```powershell
 #创建一个到目标群集的cismsession
 $newsession=New-CimSession 目标群集名称
 #在群集新创建一个3路镜像卷，
@@ -37,7 +37,7 @@ New-SmbShare -CimSession $newsession  -Name "test02" `
 
 ```
 到这里出现了新的问题，创建的目录可以在VMM中刷新出来，也可以使用如下代码，在VMM中接管
-```
+```powershell
 #FS1所有共享
 $FileShare = Get-SCStorageFileShare  |?{$_.StorageFileServer -match "SOFS名称"}
 #存储文件服务器 
@@ -49,14 +49,14 @@ Set-SCStorageFileServer -StorageFileServer $FileServer   -AddStorageFileShareToM
 
 输入常规的配置命令，系统会显示配置成功，但实际不会生效。例如
 
-```
+```powershell
 Grant-SmbShareAccess -CimSession $newsession -Name $_ -AccountName "$($env:USERDOMAIN)\Storage Server Admins" -AccessRight Full -Confirm:$false 
 Grant-FileShareAccess -CimSession $newsession -Name $_ -AccountName "$($env:USERDOMAIN)\common share users" -AccessRight Full -Confirm:$false 
 
 ```
 以及
 
-```
+```powershell
 get-acl \\群集服务器地址\VMSTOR12 | fl
 $aclobj=get-acl  \\群集服务器地址\VMSTOR14 
  set-acl \\需要配置的群集服务器地址\VMSTOR111 -AclObject $aclobj
@@ -64,13 +64,13 @@ $aclobj=get-acl  \\群集服务器地址\VMSTOR14
 ```
 还有
 
-```
+```powershell
 takeown /F \\群集服务器地址\VMSTOR04 /A /R /D Y
 takeown /f * /a /r /d y
 
 ```
 这些都不行，效果都一样。
-```
+```powershell
 icacls \\群集服务器地址\VMSTOR04 /setowner "域名\omadmin" #/T /C
 ```
 测试了两天，还是没有找到原因。
@@ -92,7 +92,7 @@ icacls \\群集服务器地址\VMSTOR04 /setowner "域名\omadmin" #/T /C
 > C:\ClusterStorage\VMSTOR01\share> 
 
 关键代码如下
-```
+```powershell
 New-Item  C:\ClusterStorage\$xname\share -ItemType Directory
 New-SmbShare -CimSession $newsession  -Name $xname -Path "C:\ClusterStorage\$xname\share" -FullAccess  '域名\domain admins','administrators'
 
