@@ -32,7 +32,7 @@ https://docs.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient?view=ne
 在Stackoverflow找到最合适的一个例子
 [这里](https://stackoverflow.com/questions/11837541/check-if-a-port-is-open)
 
-``c#
+```c#
 #原C#逻辑
 
 bool IsPortOpen(string host, int port, TimeSpan timeout)
