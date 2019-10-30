@@ -22,6 +22,7 @@ $字库=$日文
 $gcfile
 ```
 我们来看看原文
+
 ```powershell
 $postParams = @{"Ocp-Apim-Subscription-Key" = "$subscriptionKey" }
 $comments = Get-Content $NewFolder$fileNewname".comments.txt"   -Encoding utf8
