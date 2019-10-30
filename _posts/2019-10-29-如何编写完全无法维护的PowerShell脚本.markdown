@@ -6,14 +6,6 @@
 ## 方法
 朋友们一定会对变量的命名下很多心思，如果不认真对待变量名，后果是致命的。
 下面是把一个现有的ps1文件，简单的转换成作死代码。
-``` 
-$gcfile = Get-Content "C:\x\azaa.ps1"
-$xyz = ($gcfile -match "^\$.*=?" | ForEach-Object { $_.split(' |%|+|=')[0] } | Select-Object -Unique )
-$xyz | Sort-Object -Property length -Descending
-$字母小写 = 0..25 | ForEach-Object { [char][int](0x0061 + (0x01 * $_)) }
-$日文 = 0..50 | ForEach-Object { [char][int](0x306e + (0x01 * $_)) }
-$字库=$日文
-```
 
 ```powershell
 $gcfile = Get-Content "C:\x\azaa.ps1"
