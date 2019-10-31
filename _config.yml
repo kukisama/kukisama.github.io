@@ -37,6 +37,8 @@ plugins: [jekyll-paginate]
 paginate: 10
 paginate_path: "page/:num/"
 
+plugins: [jekyll-seo-tag]
+
 # Comment
 comment:
     disqus: vno-jekyll
