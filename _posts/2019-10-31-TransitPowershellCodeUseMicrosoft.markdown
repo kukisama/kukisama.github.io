@@ -229,4 +229,5 @@ $languages | ForEach-Object {
 2. 无法处理一行代码写完之后不换行，在最后写#然后注释。
 
 如果后面有空，我会继续改进的
+
 用翻译软件是大势所趋，无论是自用还是要走国际范，让代码走出国门，[Microsoft 文本翻译 API](https://azure.microsoft.com/zh-cn/pricing/details/cognitive-services/translator-text-api/)都是您的明智之选
