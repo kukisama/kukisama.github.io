@@ -45,6 +45,7 @@ function translatorMS ($language, $texts) {
 ```
 
 - 注意用到的KEY，这个要提前申请，
+
 ```powershell
 $subscriptionKey = '这里是key'
 $postParams = @{ "Ocp-Apim-Subscription-Key" = "$subscriptionKey" }
@@ -63,6 +64,7 @@ translatorMS -language $lanx -texts $body
 3. 想办法把它转换成exe
 4. 最后将需要翻译的ps1文件，拖动到这个文件上,默认情况下支持中英互转
 5. 如果你不在步骤2转换为exe，则需要使用类似如下的方法来使用
+
 ```powershell
  & '.\Bing Transit 0.1.ps1' -filename C:\x\azaa.ps1 -languages "zh-Hans"
 ```
