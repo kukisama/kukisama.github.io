@@ -109,7 +109,7 @@ $img.Dispose()
 github是个不要钱的图床，它支持用git来上传下载文件。
 
 - 配置本地git
-```
+```powershell
 git config --global user.name "用户名"
 git config --global user.email "用户邮箱"
 cd ~/.ssh
@@ -121,8 +121,8 @@ ssh-keygen -t rsa -C "用户邮箱"
 打开[这里](https://github.com/settings/profile)，在右侧菜单栏中找到`SSH and GPG keys`，选择`new SSH key`，输入title，下面key的内容就是本机`ssh key`,也就是刚才生成的公钥，直接将id_rsa.pub中的内容粘贴过来就可以，然后点击下面的add SSH key即可完成。
 - 复制密钥
 
-输入这个命令cat id_rsa.pub，会出来类似下面的东西，复制出来，这就是密钥
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDRyubAWD7PfF+baIYAYVpdtTag7YZYdmCNz2mkoMjxkP6aN5C/Rnxxxxxxxxxxxxxxxxxxxxx5sSNV42co5S4Tc5W3eBB9bPBIoObqZ/g8JkCVrEIgUXTO1rn9p7h5erQ0/TcC/tIQ+HVxVx+mV7Y/wcYY05+Bbm8Cv60= a9y@live.cn
+输入这个命令`cat id_rsa.pub`，会出来类似下面的东西，复制出来，这就是密钥
+`ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDRyubAWD7PfF+baIYAYVpdtTag7YZYdmCNz2mkoMjxkP6aN5C/Rnxxxxxxxxxxxxxxxxxxxxx5sSNV42co5S4Tc5W3eBB9bPBIoObqZ/g8JkCVrEIgUXTO1rn9p7h5erQ0/TcC/tIQ+HVxVx+mV7Y/wcYY05+Bbm8Cv60= a9y@live.cn`
 
 - 本地创建目录C:\gitupdate 
 
@@ -139,7 +139,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDRyubAWD7PfF+baIYAYVpdtTag7YZYdmCNz2mkoMjx
 前置条件准备的差不多了，可以看看完整代码。
 ### 剪贴板直接保存png，然后传到github上，引用github page的地址
 
-```
+```powershell
 #剪贴板直接保存png
 Add-Type -Assembly PresentationCore
 $img = [Windows.Clipboard]::GetImage()
@@ -220,7 +220,7 @@ github page的图床真的是不能明着说，反正国内就是不稳定。这
 先照着[Ubuntu16.04安装ftp服务器](https://blog.csdn.net/yancey_blog/article/details/52790451)去配置一下
 
 
-```bash
+```python
 sudo apt-get install vsftpd
 创建用户目录 sudo mkdir picupdate
 创建用户 sudo useradd -d /var/www/html/picupdate -s /bin/bash uftp
@@ -282,7 +282,7 @@ $rs.Close()
 $rs.Dispose()
 
 ```
-```bash
+```python
 sudo vi /etc/vsftpd.conf
 sudo vi /etc/services
 sudo /etc/init.d/vsftpd restart
