@@ -371,7 +371,7 @@ $UserName = "kukisama"   #定义管理员账户名称
 $cred = New-Object System.Management.Automation.PSCredential($UserName,$Password) 
 
 #上传
-Set-SCPFile -ComputerName "ny9s.com" -Port 62222 -Credential $cred  -Remotepath "/var/www/html/picupdate" -LocalFile $($rootpath+$filename+'.png')
+Set-SCPFile -ComputerName "ny9s.com" -Port 8888 -Credential $cred  -Remotepath "/var/www/html/picupdate" -LocalFile $($rootpath+$filename+'.png')
  }
 
  ```
