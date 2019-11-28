@@ -48,7 +48,7 @@ PowerShell不是万能的，但毕竟都是.Net家族的儿子，很多系统原
  
  ![image](http://ny9s.com/picupdate/20191128114122.png)
  
- # 总结
+# 总结
  通过C#转DLL，然后PowerShell调用DLL的方法，极大的降低了从C#转换到PowerShell的难度。基本不需要对C#的阅读能力了。
  ![image](http://ny9s.com/picupdate/20191128114356.png)
  
