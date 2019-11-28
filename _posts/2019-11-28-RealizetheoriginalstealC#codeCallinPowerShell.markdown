@@ -16,7 +16,7 @@ PowerShell不是万能的，但毕竟都是.Net家族的儿子，很多系统原
 
 老实说，第二项是最操蛋的。毕竟是个翻译工作，之前也在[如何更智能的看懂PowerShell的英文注释](http://github.ny9s.com/2019/10/TransitPowershellCodeUseMicrosoft/) 中表述过类似的概念。
  
- # DLL的优势
+# DLL的优势
  DLL的优势是方法已经由作者写死了，用起来和模块一样，但是理论上，速度更快一些。这适合有些作者没有开源代码的情况来使用。而且成型的DLL，用起来真的是非常简单。
  
  像最常用的DLL，一个是汉字转拼音的微软官方DLL [Microsoft Visual Studio International Pack 1.0 SR1](https://www.microsoft.com/zh-cn/download/confirmation.aspx?id=15251)，一个就是下面例子的QQ数据库了。
