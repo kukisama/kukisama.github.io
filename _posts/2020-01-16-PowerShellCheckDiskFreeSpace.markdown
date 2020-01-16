@@ -9,6 +9,7 @@ tags: PowerShell进阶学习
 - 1、找出所有需要检查的主机名称，从Active Directory域中直接获取会很方便
 - 2、确认能够访问的主机（ping），不能访问的不去检测磁盘。
 - 3、针对能够访问的主机，检测本地磁盘可用空间和可用空间占比
+- 
 ```powershell
 #找出xxxou下的所有主机
 $AllComputers = Get-ADComputer -Filter * -SearchScope Subtree  -SearchBase "CN=Computers,DC=contoso,DC=com"
@@ -103,6 +104,7 @@ CheckCSpace $Results
 # 完整代码，逻辑优化
 - 针对并发逻辑，单独包成函数
 - 不仅仅可以用来ping
+- 
 ```powershell
 
 $AllComputers = Get-ADComputer -Filter * -SearchScope Subtree  -SearchBase "CN=Computers,DC=contoso,DC=com"
