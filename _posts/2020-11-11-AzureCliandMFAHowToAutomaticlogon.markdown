@@ -115,3 +115,8 @@ AzureUSGovernment https://management.usgovcloudapi.net/ https://login.microsofto
 
 Connect-AzAccount -Environment AzureChinaCloud
  ```
+ 
+# 管理账号权限
+可以在AAD中如下位置进行配置。应用程序ID看起来和一个账号也是类似的。更多细节我也在研究
+![image](http://ny9s.com/picupdate/20201112214732.png)
+ 
