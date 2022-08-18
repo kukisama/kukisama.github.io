@@ -25,7 +25,7 @@ tags: WireShark
 
 [WirekShark](https://www.wireshark.org/#download)是免费软件，主要用来抓数据包，然后分析网络数据包。官方提供了非安装的版本，直接下载Portable版本即可。和安装版相比，两者只是在内容组织上有所差异，实际没有没有任何差异。
 
-<img src="../../../WireSharkFastStart.assets/image-20220812111620998.png" alt="image-20220812111620998" style="zoom:50%;" />
+<img src="../WireSharkFastStart.assets/image-20220812111620998.png" alt="image-20220812111620998" style="zoom:50%;" />
 
 
 
@@ -64,7 +64,7 @@ TShark不能远程执行（仅仅是有警告，不确定是否真的有问题�
 
 正常工作的WireShark大概是这样的。
 
-<img src="../../../WireSharkFastStart.assets/image-20220812112645212.png" alt="image-20220812112645212" style="zoom: 67%;" />
+<img src="./WireSharkFastStart.assets/image-20220812112645212.png" alt="image-20220812112645212" style="zoom: 67%;" />
 
 ## 捕获逻辑
 
@@ -88,7 +88,7 @@ tshark.exe -D
 
 从图中可以知道，包含`\Device`的设备是允许捕获的，也就是1-9。这个列表根据当前主机的信息不同，返回也不一样
 
-![image-20220812112801438](../../../WireSharkFastStart.assets/image-20220812112801438.png)
+![image-20220812112801438](../WireSharkFastStart.assets/image-20220812112801438.png)
 
 实际开始捕获的命令大致是这样的
 
@@ -162,13 +162,13 @@ $TargetHost | ForEach-Object {
 
 为了防止漏掉手动安装Npcap ，所以需要检查一下。
 
-<img src="../../../WireSharkFastStart.assets/image-20220812145727161.png" alt="image-20220812145727161" style="zoom: 50%;" />
+<img src="../WireSharkFastStart.assets/image-20220812145727161.png" alt="image-20220812145727161" style="zoom: 50%;" />
 
 
 
 最终执行大概是这样的，一个端点弹出一个窗口，执行一条命令，捕获的数据包存储在远程主机的Tshark目录中
 
-![image-20220812150053580](../../../WireSharkFastStart.assets/image-20220812150053580.png)
+![image-20220812150053580](../WireSharkFastStart.assets/image-20220812150053580.png)
 
 ## 作者
 
