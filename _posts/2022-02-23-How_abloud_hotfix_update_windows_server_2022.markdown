@@ -23,7 +23,7 @@ tags: Windows Server 2022
 
 动态链接库相当于组成乐高的不同砖块。有些是铺在底下的砖头，如果要更换这些砖头，就需要把这块砖上关联的东西都铲了（停止），才能更换。比如要拆除下图左下角的砖，换一个别的颜色。除了把整个风车拆除，别无她法。
 
-![image-20220211130657308](../../../assets/image-20220211130657308.png)
+![image-20220211130657308](../assets/image-20220211130657308.png)
 
 > 对于Windows，操作系统的很多功能都由 DLL 提供。 此外，当您在这些操作系统中的一个Windows程序时，该程序的很多功能可能由 DLL 提供。 例如，某些程序可能包含许多不同的模块，并且程序的每个模块包含在 DLL 中并分发。
 >
@@ -75,7 +75,7 @@ tags: Windows Server 2022
 
 下面的这个脚本来自`Adam Bertram`，作者是[微软的在任MVP](https://mvp.microsoft.com/en-us/PublicProfile/5001322)。直接照抄就可以了。
 
-![image-20220211133130145](../../../assets/image-20220211133130145.png)
+![image-20220211133130145](../assets/image-20220211133130145.png)
 
  
 
@@ -260,7 +260,7 @@ function TestPendingreboot($ComputerName)
 
 而在Windows7以及更早的系统中，补丁的安装是这样的：
 
-![image-20220223140844449](../../../assets/image-20220223140844449.png)
+![image-20220223140844449](../assets/image-20220223140844449.png)
 
  
 
@@ -300,7 +300,7 @@ function TestPendingreboot($ComputerName)
 
 Hotpatch 的工作原理是首先使用 Windows 更新最新累积更新建立基线。基于该基线的热补丁会定期发布（例如，每月的第二个星期二）。热补丁将包含不需要重新启动的更新。定期（从每三个月开始）使用新的最新累积更新刷新基线。
 
-![Hotpatch 示例时间表。](../../../assets/hotpatch-sample-schedule.png)
+![Hotpatch 示例时间表。](../assets/hotpatch-sample-schedule.png)
 
 上面的话很官方，简单来说就是这样：
 
@@ -330,7 +330,7 @@ Hotpatch 的工作原理是首先使用 Windows 更新最新累积更新建立�
 2. 从 Azure 门户开始创建新 VM
    - 在预览期间，您需要开始使用[此特定链接创建](https://aka.ms/ws2022ae-portal-preview)。
    
-   <img src="../../../assets/image-20220214161837579.png" alt="image-20220214161837579" style="zoom: 33%;" />
+   <img src="../assets/image-20220214161837579.png" alt="image-20220214161837579" style="zoom: 33%;" />
    
 3. 在 VM 创建期间提供详细信息
    - 确保在“图像”下拉列表中选择了受支持的*Windows Server Azure 版图像。*使用[本指南](https://docs.microsoft.com/en-us/azure/automanage/automanage-windows-server-services-overview#getting-started-with-windows-server-azure-edition)确定支持哪些图像。
@@ -347,53 +347,57 @@ Hotpatch 的工作原理是首先使用 Windows 更新最新累积更新建立�
 
 - 在安装好的操作系统，进入`来宾和主机更新`→`转到热补丁（预览）`
 
-<img src="../../../assets/image-20220223142652568.png" alt="image-20220223142652568" style="zoom:33%;" />
+<img src="../assets/image-20220223142652568.png" alt="image-20220223142652568" style="zoom:33%;" />
 
 - 在这个界面`Assess updates`→`立即触发评估`→`确定`
 
-<img src="../../../assets/image-20220223142852714.png" alt="image-20220223142852714" style="zoom:33%;" />
+<img src="../assets/image-20220223142852714.png" alt="image-20220223142852714" style="zoom:33%;" />
 
 
 
 - 等待评估结束，可以看到能够安装的补丁会在下方列出来。
 
-<img src="../../../assets/image-20220223142235882.png" alt="image-20220223142235882" style="zoom: 33%;" />
+<img src="../assets/image-20220223142235882.png" alt="image-20220223142235882" style="zoom: 33%;" />
 
 
 
 - 此时可以点击顶部的`Manage updates`→`one-time update`进行手动安装补丁
 
-<img src="../../../assets/image-20220223143056847.png" alt="image-20220223143056847" style="zoom:33%;" />
+<img src="../assets/image-20220223143056847.png" alt="image-20220223143056847" style="zoom:33%;" />
+
+
 
 - 进行如下配置，默认不需要修改
 
-<img src="../../../assets/image-20220223143143327.png" alt="image-20220223143143327" style="zoom:33%;" />
+<img src="../assets/image-20220223143143327.png" alt="image-20220223143143327" style="zoom:33%;" />
 
 - 在左侧点击`+包含更新分类`，勾选所有
 
-<img src="../../../assets/image-20220223143206473.png" alt="image-20220223143206473" style="zoom: 25%;" />
+<img src="../assets/image-20220223143206473.png" alt="image-20220223143206473" style="zoom: 25%;" />
 
 - 刚才发现的补丁就可以安装了。点击`下一步`继续
 
-![image-20220223143253721](../../../assets/image-20220223143253721.png)
+![image-20220223143253721](../assets/image-20220223143253721.png)
 
 - 确认无误，正式安装
 
-<img src="../../../assets/image-20220223143332467.png" alt="image-20220223143332467" style="zoom:33%;" />
+<img src="../assets/image-20220223143332467.png" alt="image-20220223143332467" style="zoom:33%;" />
+
+
 
 - 右上角会出现提示正在安装。
 
-<img src="../../../assets/image-20220223143358413.png" alt="image-20220223143358413" style="zoom:33%;" />
+<img src="../assets/image-20220223143358413.png" alt="image-20220223143358413" style="zoom:33%;" />
 
 - 由于补丁不大，安装很快结束。
 
-<img src="../../../assets/image-20220223143430204.png" alt="image-20220223143430204" style="zoom:33%;" />
+<img src="../assets/image-20220223143430204.png" alt="image-20220223143430204" style="zoom:33%;" />
 
 
 
 - 一条正常的安装日志，大概是长这个样子的。
 
-<img src="../../../assets/image-20220223143456110.png" alt="image-20220223143456110" style="zoom:33%;" />
+<img src="../assets/image-20220223143456110.png" alt="image-20220223143456110" style="zoom:33%;" />
 
 
 
@@ -403,23 +407,25 @@ Hotpatch 的工作原理是首先使用 Windows 更新最新累积更新建立�
 
 - 检查日志，看到有如下错误提示
 
-<img src="../../../assets/image-20220223143610208.png" alt="image-20220223143610208" style="zoom:33%;" />
+<img src="../assets/image-20220223143610208.png" alt="image-20220223143610208" style="zoom:33%;" />
+
+
 
 - 这里也能看到相应错误提示
 
-<img src="../../../assets/image-20220223143949753.png" alt="image-20220223143949753" style="zoom:33%;" />
+<img src="../assets/image-20220223143949753.png" alt="image-20220223143949753" style="zoom:33%;" />
 
 - 前往虚拟机，查看日志，由于是个core系统，没有资源管理器，所以需要开一个notepad，然后在notepad里面，使用`打开`，操作这个窗口。在这里，我们可以选择`单个文件`，通过远程桌面，可以把文件拷贝出来。日志检查没有发现异常的地方。
 
-<img src="../../../assets/image-20220223143707690.png" alt="image-20220223143707690" style="zoom:33%;" />
+<img src="../assets/image-20220223143707690.png" alt="image-20220223143707690" style="zoom:33%;" />
 
 - 检查日志过程中，发现裸机内存占用很大，远程桌面也有时会断联。
 
-<img src="../../../assets/image-20220223143804652.png" alt="image-20220223143804652" style="zoom:33%;" />
+<img src="../assets/image-20220223143804652.png" alt="image-20220223143804652" style="zoom:33%;" />
 
 - 内存扩容为3.5G，裸连直接使用掉2G，因此可以下定论，Windows Server 2022比较占用内存资源，即使是CORE，也要分配4G内存。
 
-<img src="../../../assets/image-20220223143827084.png" alt="image-20220223143827084" style="zoom:33%;" />
+<img src="../assets/image-20220223143827084.png" alt="image-20220223143827084" style="zoom:33%;" />
 
 
 

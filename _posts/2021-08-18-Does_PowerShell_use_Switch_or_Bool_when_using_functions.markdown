@@ -48,7 +48,7 @@ MyFunction -A
 
 但是在`PowerShell workflow`中，且套用`两层workfolw`的前提下，会出现错误，导致无法继续。
 
-![image](http://ny9s.com/picupdate/20210817152538.png)
+![image](../assets/20210817152538.png)
 
 # 解决方法
 

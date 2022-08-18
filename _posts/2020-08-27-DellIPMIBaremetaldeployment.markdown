@@ -4,8 +4,8 @@ title: "戴尔服务器的IPMI与裸金属部署"
 tags: PowerShell进阶学习
 englishname: Dell_IPMI_Bare_metal_deployment
 ---
-![image](http://ny9s.com/picupdate/20200827215217.png)
- 
+![image](../assets/20200827215217.png)
+
 # 需求
 最近手里有一批戴尔的R740XD服务器需要批量装系统。以前针对华为浪潮中兴联想的机器，都可以通过开源的IPMI工具`ipmitool`来进行`批量`配置。实际上 也只是借用了两个功能
 1. 配置系统使用UEFI启动模式
@@ -27,11 +27,11 @@ IPMI 能够横跨不同的操作系统、固件和硬件平台，可以智能的
 
 [官方帮助可以看这里](https://www.dell.com/support/manuals/cn/zh/cndhs1/integrated-dell-remote-access-cntrllr-8-with-lifecycle-controller-v2.00.00.00/racadm_idrac_pub-v1/racadm-syntax-usage?guid=guid-6cf590a1-f185-499b-b7c1-2a6d2fb958e6&lang=en-us)
 
- ![image](http://ny9s.com/picupdate/20200827213759.png)
+ ![image](../assets/20200827213759.png)
+
  
- 
- 
- 
+
+
 戴尔这里其实真的是好心，重新设计了IPMI，包装成了iDRAC 这么一个东西，现在最新的版本已经是iDRAC9了。跟它适配的命令行IPMI工具就叫做`racadm`。当然这种集成的事情，华为和联想也都有完整产品。
 
 获取这个工具的唯一前提或者说要求是，你需要一台戴尔服务器的`序列号`。然后去官网搜索下载
@@ -39,10 +39,10 @@ IPMI 能够横跨不同的操作系统、固件和硬件平台，可以智能的
 
 安装好后，可以提取出大概这么一个目录，我将IPMI工具也混合在了一起，接下来就可以干事了
 
-![image](http://ny9s.com/picupdate/20200827213927.png)
- 
+![image](../assets/20200827213927.png)
+
 # 痛点
- 
+
 ~~问题不叫问题，叫~~==痛点==顾名思义，就是很难搞的地方。
 
 先整理一下我们通过图形界面或者进入BIOS来实际要做的工作

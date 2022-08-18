@@ -16,7 +16,7 @@ tags: SDN
 
 我在[bilibili](https://www.bilibili.com/video/BV1544y1h7wT/)放了一个视频，可以点击连接直达，和本文配合阅读。
 (手机版应该可以看到下面的图，电脑版看不到，很奇怪。)
-[![image](http://ny9s.com/picupdate/20210911215416.png )](https://www.bilibili.com/video/BV1544y1h7wT/)
+[![image](../assets/20210911215416.png )](https://www.bilibili.com/video/BV1544y1h7wT/)
 
 
 ## 硬件需求
@@ -193,7 +193,7 @@ tags: SDN
 
 从193行开始，图片中标注的几个部分已经被注释。 
 
-![image](http://ny9s.com/picupdate/20200324203136.png)
+![image](../assets/20200324203136.png)
 
  
 

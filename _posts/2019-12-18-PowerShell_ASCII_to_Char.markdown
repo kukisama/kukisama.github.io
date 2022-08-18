@@ -24,10 +24,10 @@ $data1
 # 从数组转换回字符
 $enc = [System.Text.Encoding]::Unicode
 $enc.GetString($data1)
- ```
+```
  输出结果大概是这个样子的
- 
- ![image](http://ny9s.com/picupdate/20191218102312.png)
+
+ ![image](../assets/20191218102312.png)
 
 # 可用代码
  ```powershell
@@ -53,12 +53,12 @@ $enc.GetString($data1)
 GetCodePoint 鵢
 GetTrueChar 9D62
  ```
- 
 
- 
+
+
  看起来没问题，转换正常
- ![image](http://ny9s.com/picupdate/20191218102512.png)
- 
+ ![image](../assets/20191218102512.png)
+
 ```powershell
  #一些小贴士
  Characters
@@ -72,7 +72,7 @@ GetTrueChar 9D62
 # 测试
 
  写一个生成一大堆乱七八糟字符的函数看看效果，因为ASCII，类似9D62这种实际是16进制数，最后转换成10进制数，然后进行转换。
- 
+
  所以我们基于```16进制```或者```直接10进制```进行累加就能出来一大堆需要的数
 ```powershell
  $STARTx=GetCodePoint "鵢"
@@ -81,14 +81,14 @@ GetTrueChar 9D62
 #16进制首先转换成10进制，然后增加偏移量$_，再转换回16进制(字符大写)
  Write-Host (GetTrueChar ([System.Convert]::ToInt32($STARTx,16)+$_).ToString('X'))  -NoNewline
  }
- ```
- 
- ![image](http://ny9s.com/picupdate/20191218105159.png)
- 
- 
+```
+
+ ![image](../assets/20191218105159.png)
+
+
  用这种方法做出来的字典，非常`优雅`
- 
+
 这个写法还有一个变种，可以用类似下面的方法，直接简单生成。
 ```powershell
  $日文部分字库 = 0..50 | ForEach-Object { [char][int](0x306e + (0x01 * $_)) }
- ```
+```

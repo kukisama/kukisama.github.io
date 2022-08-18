@@ -15,8 +15,8 @@ tags: PowerShell进阶学习
 [Free Tool: Advanced Settings Editor for Hyper-V Virtual Machines](https://www.altaro.com/hyper-v/free-tool-advanced-settings-editor-hyper-v-virtual-machines/)
 大概是这个样子的。
 
-![image](http://ny9s.com/picupdate/20200103094658.png)
- 
+![image](../assets/20200103094658.png)
+
 > 这件事情给我的感触是，即使过去一年之久，你想要有改变，就一定有改变发生。
 
 另外他的这篇科普文[Hyper-V Virtual CPUs Explained，Hyper-V虚拟机CPU的解释](https://www.altaro.com/hyper-v/hyper-v-virtual-cpus-explained/)非常不错，浅入浅出，适合销售吹水。
@@ -62,28 +62,27 @@ Windows:   D4C3B2A1-F6E5-H8G7-XXXX-XXXXXXXXXXXX
 
 [ 这篇文章有非常详细的实现过程](https://social.technet.microsoft.com/Forums/windows/en-US/6f2c6f0f-4e80-44d0-b47a-ce3cbb47c211/cloned-vms-with-identical-bios-guids?forum=winserverhyperv)，可以看下讨论的过程。
 
-
 我们接下来先用WMI浏览器，根据上面的一些帖子，熟悉一下工具的使用。这里可以看到，我们能够很方便的查看WMI相关类的具体属性，以及它支持多少属性，有多少实例，你不需要用```gwmi```一遍一遍的查询，一次一次就可以搞定。最下方还可以帮你生成WQL的查询指令
-![image](http://ny9s.com/picupdate/20200103001018.png)
+![image](../assets/20200103001018.png)
 
 在这个位置，我们可以看到虚拟机名称和BIOSguid（也就是UUID），知道路径也就可以构造查询语句了。如果想查别的属性，也可以很方便的查看
 
-![image](http://ny9s.com/picupdate/20200103001611.png)
- 
+![image](../assets/20200103001611.png)
+
  通过构造查询，才可以发现，这个鬼东西有多牛逼，它竟然可以把虚拟机快照的的BIOSguid抓出来（下图带日期的那条记录）
- 
- ![image](http://ny9s.com/picupdate/20200103002023.png)
- 
+
+ ![image](../assets/20200103002023.png)
+
 比如说，我想修改BIOSguid，但是我不知道方法，用这个工具也能找到很合适的提示
 
 这里说明了，这个属性虽然是只读的，但是可以修改，根据提示搜索，找到了[这里的详细说明](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/virtual/msvm-virtualsystemsettingdata)，通过链接，能找到最原汁原味的C#方法：[戳这里](https://docs.microsoft.com/zh-cn/previous-versions/windows/desktop/virtual/modifyvirtualsystem-msvm-virtualsystemmanagementservice?redirectedfrom=MSDN)
- 
-![image](http://ny9s.com/picupdate/20200103004636.png)
+
+![image](../assets/20200103004636.png)
 
 有了这些，就可以强硬构造PowerShell了。不过有前人写了那么的代码，找出核心部分重新构造即可。
 
 下面的代码用了一些现代的方法，比如点分表示法，管道查询。
- 
+
  ```powershell
 #这里假设虚拟机的VMname是2020
 $VMname="2020"
@@ -105,10 +104,10 @@ $ModifySystemSettingsParams.SystemSettings = $CurrentSettingsData.GetText([Syste
 $VMMS.InvokeMethod('ModifySystemSettings', $ModifySystemSettingsParams, $null)
  
  ```
- 
+
 ## 总结
- 
+
  温故而知新，永远不过时
+
  
- 
- 
+

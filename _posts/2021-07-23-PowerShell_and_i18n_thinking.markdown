@@ -9,7 +9,7 @@ englishname: 2021-07-23-PowerShell_and_i18n_thinking.markdown
 
 > i18n（其来源是英文单词 internationalization的首末字符i和n，18为中间的字符数）是“国际化”的简称。在资讯领域，国际化(i18n)指让产品（出版物，软件，硬件等）无需做大的改变就能够适应不同的语言和地区的需要。对程序来说，在不修改内部代码的情况下，能根据不同语言及地区显示相应的界面。 在全球化的时代，国际化尤为重要，因为产品的潜在用户可能来自世界的各个角落。通常与i18n相关的还有L10n（“本地化”的简称）。
 
-![image](http://ny9s.com/picupdate/20210723175729.png)
+![image](../assets/20210723175729.png)
 
 # 有没有意义
 
@@ -19,11 +19,11 @@ englishname: 2021-07-23-PowerShell_and_i18n_thinking.markdown
 
 当然它也不能`没有乌克兰语`的支持，如果只有英语，那`本地人民`会念他的好么？
 
-<img src="http://ny9s.com/picupdate/20210723165531.png" alt="image" style="zoom:67%;" />
+<img src="../assets/20210723165531.png" alt="image" style="zoom:67%;" />
 
 这种恶劣行为相当于什么，相当于`滴滴`只有英文版，`抖音`上的网红没一个说中文。
 
-<img src="http://ny9s.com/picupdate/20210723175950.png" alt="image" style="zoom:67%;" />
+<img src="../assets/20210723175950.png" alt="image" style="zoom:67%;" />
 
 
 
@@ -37,13 +37,13 @@ englishname: 2021-07-23-PowerShell_and_i18n_thinking.markdown
 
 更有甚者，因为资源有限的问题，以前的游戏卡带厂商，还会把多国语言字库写入到ROM里面，让非官方的i18n完全没法做。
 
-<img src="http://ny9s.com/picupdate/20210723170221.png" alt="image" style="zoom:67%;" />。
+<img src="../assets/20210723170221.png" alt="image" style="zoom:67%;" />。
 
 商业软件也有将多个语言文件保存为DLL或和其他乱七八糟的格式，方便调用的情况。
 
 比如Typora就是用的`.pak`的格式。不过商业软件的问题也不是问题。一方面近十年来看，软件中文化越来越多，厂商已经把汉化给做了，所以用什么格式存储数据是人家的自由也无伤大雅。另一方面人家也没`求着你`帮他做汉化对吧。
 
-<img src="http://ny9s.com/picupdate/20210723170615.png" alt="image" style="zoom:67%;" />
+<img src="../assets/20210723170615.png" alt="image" style="zoom:67%;" />
 
 ## 不加密
 
@@ -85,7 +85,7 @@ Current directory has
 
 
 
-<img src="http://ny9s.com/picupdate/20210723173155.png" alt="image" style="zoom:67%;" />
+<img src="../assets/20210723173155.png" alt="image" style="zoom:67%;" />
 
 
 
@@ -103,11 +103,11 @@ Write-Host ($lang[0]+$fullname.count+$lang[1]+($fullname|?{$_.name -match ".dll"
 
 这样的话，会有一个弹窗让你选择语言。
 
-<img src="http://ny9s.com/picupdate/20210723174737.png" alt="image" style="zoom: 50%;" />
+<img src="../assets/20210723174737.png" alt="image" style="zoom: 50%;" />
 
 选择语言之后，我们看看中英文的不同反馈。
 
-![image](http://ny9s.com/picupdate/20210723174910.png)
+![image](../assets/20210723174910.png)
 
 # 原理
 

@@ -304,8 +304,8 @@ ufw disable
 然而上面的问题虽然看起来步骤应该很详细了，但是问题是在我的环境配置失败了……
 ## Posh SSH
 花了很多时间在FTP上，开始继续寻找解决方案。经过测试，最简单的方法是安装Posh-SSH模块，用SSH的方式去上传下载文件。这个模块在[github](https://github.com/darkoperator/Posh-SSH/tree/master/Release)可以下载到。
-![image](http://ny9s.com/picupdate/20191107114255.png)
- 
+![image](../assets/20191107114255.png)
+
 另外也可以使用`Install-Module -Name Posh-SSH -RequiredVersion 2.0.2`直接安装，我觉得优点如下：
 
 1. 服务器只需要开SSH端口，而且这个端口可以不用22，映射成其他端口一样工作正常。
@@ -321,13 +321,13 @@ $cred=Get-Credential
 Get-SCPFile -ComputerName "ny9s.com" -Port 12121 -Credential $cred  -RemoteFile "/home/kukisama/IOid.jpg" -LocalFile 'C:\img\ppp.jpg' -AcceptKey
 #上传
  Set-SCPFile -ComputerName "ny9s.com" -Port 12121 -Credential $cred  -Remotepath "/home/kukisama" -LocalFile 'C:\img\ppp.jpg'
- ```
+```
 ###  模块可清理的内容
- ![image](http://ny9s.com/picupdate/20191107112059.png)
+ ![image](../assets/20191107112059.png)
 如果是在线安装的话，模块会位于
 `C:\Program Files\WindowsPowerShell\Modules\Posh-SSH`如果不要了，直接删除就相当于卸载。
-整体目录有2.26MB，有500K的帮助文件，测试后，发现删除没影响（en-US目录）。
- 
+整体目录有2.26MB，有500K的帮助文件，测试后，发现删除没影响（en-US目录)。
+
 
 
 ## 密码加解密逻辑
@@ -374,7 +374,7 @@ $cred = New-Object System.Management.Automation.PSCredential($UserName,$Password
 Set-SCPFile -ComputerName "ny9s.com" -Port 8888 -Credential $cred  -Remotepath "/var/www/html/picupdate" -LocalFile $($rootpath+$filename+'.png')
  }
 
- ```
+```
 
 
 

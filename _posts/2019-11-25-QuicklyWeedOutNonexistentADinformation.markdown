@@ -68,9 +68,9 @@ select operation target"
 }
 ```
 脚本执行成功后，会在下方生成类似如下的文本字符，将文本字符拷贝出来，然后直接复制到上一阶段准备删除Active Directory环节的cmd中，系统就会连续执行，此时只需要鼠标点击确认即可。
- 
+
 之所以脚本会连续执行，是因为……有回车。
-![image](http://ny9s.com/picupdate/20191125161725.png)
+![image](../assets/20191125161725.png)
 
 ## 备注
 

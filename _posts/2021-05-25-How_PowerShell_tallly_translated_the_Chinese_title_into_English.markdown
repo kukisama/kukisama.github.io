@@ -81,5 +81,5 @@ TitlePlus PowerShell如何高大上的将中文标题翻译成英文
 - 翻译结束右下角弹窗，并将结果塞进剪贴板
 - 到网页上一黏贴，齐活儿。
 
- ![image](http://ny9s.com/picupdate/20210525140659.png)
- 
+ ![image](../assets/20210525140659.png)
+
