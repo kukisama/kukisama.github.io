@@ -1,0 +1,41 @@
+# 针对AD中配置时间源，方法基本是固定的
+
+```
+打开命令行模式，执行以下命令:
+w32tm /config /manualpeerlist:timeserver /syncfromflags:manual /reliable:yes /update 
+（其中：timeserver设置为 xxx.xx.xx.xx）
+然后, 重启 W32Time 服务.
+验证时间服务器是否可用，可以使用以下方法，在命令行模式下执行：
+w32tm /resync /computer:target
+----与设置好的时间服务器执行同步，target设置为时间服务器地址
+w32tm /stripchart /computer:target
+-----查看与时间服务器的时间差
+
+```
+
+
+# 适用于多IP地址情况
+[#官方参数说明连接](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff799054(v%3Dws.11))
+```
+
+manualpeerlist：<peers> -将手动对等列表设置为<peers>，这是一个以空格分隔的域名系统（DNS）和/或IP地址列表。当您指定多个对等方时，此选项必须用引号（“）引起来。
+
+syncfromflags：<源> -设置NTP客户端应从哪些源进行同步。<source>应该是这些关键字的逗号分隔列表（不区分大小写）：
+
+手动 —包括手动对等方列表中的对等方。
+
+DOMHIER —从域层次结构中的域控制器同步。
+
+否 -不从任何服务器同步。
+
+ALL-从手动和域对等方同步。
+
+
+```
+
+# 针对多时间源的时间同步配置方法
+```
+#地址用空格隔开，然后注意有引号
+w32tm /config /manualpeerlist:"1.1.1.1 2.2.2.2 3.3.3.3 /syncfromflags:manual /reliable:yes /update 
+
+```
