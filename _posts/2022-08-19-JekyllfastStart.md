@@ -72,7 +72,7 @@ bundle exec jekyll serve --livereload
 
 http://localhost:4000
 
-
+链接地址是本地的虚拟的服务器地址，端口固定。
 
 
 
