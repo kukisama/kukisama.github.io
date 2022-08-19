@@ -4,7 +4,7 @@ title: "Jekyll模板升级笔记"
 tags: Jekyll
 categories: [Jekyll, 初级知识]
 comments: true
-img_path: /posts/
+
 ---
 
 ![image-20220819135436050](../assets/image-20220819135436050.png)
@@ -29,7 +29,7 @@ img_path: /posts/
 
 1、[从RubyInstaller Downloads](https://rubyinstaller.org/downloads/)下载并安装**Ruby+Devkit**版本。使用默认选项进行安装。
 
-<img src="assets/image-20220819100145158.png" alt="image-20220819100145158" style="zoom:33%;" />
+<img src="../assets/image-20220819100145158.png" alt="image-20220819100145158" style="zoom:33%;" />
 
 2、 安装结束后会有一个弹窗，3选1，我们选择`MSYS2 and MINGW development tool chain`。如果不小心关掉了，可以在cmd里面运行`ridk install` 重新把这个向导拉起来
 
