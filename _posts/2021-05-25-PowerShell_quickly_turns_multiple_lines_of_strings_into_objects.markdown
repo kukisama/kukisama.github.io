@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PowerShell快速将多行字符串转成对象"
-tags: PowerShell初级学习
+tags: PowerShell初阶学习
 ---
 # 背景
 写脚本的时候，总有临时想构造一堆数组的时候，正经的一个数组是下面这样的
