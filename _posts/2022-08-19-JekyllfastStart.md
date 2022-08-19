@@ -4,7 +4,7 @@ title: "Jekyll模板升级笔记"
 tags: Jekyll
 categories: [Jekyll, 初级知识]
 comments: true
-
+img_path: /posts/
 ---
 
 ![image-20220819135436050](../assets/image-20220819135436050.png)
