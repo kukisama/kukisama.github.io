@@ -1,4 +1,12 @@
-# AzureStack HCI的成本精算
+---
+layout: post
+title: "AzureStack HCI的成本精算"
+tags: Azure Stack HCI
+categories: [Azure Stack HCI, 规划]
+comments: true
+
+---
+
 
 不是一个人，而是很多朋友在了解HCI产品后，会觉得AzureStack HCI的价格很高，难落地。
 
